@@ -1,12 +1,12 @@
-# Dust
+# EVMSanitizer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Next.js](https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/) [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://vercel.com/) [![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-green.svg)](https://github.com/prettier/prettier) [![ESLint](https://img.shields.io/badge/Code%20Style-ESLint-blueviolet)](https://eslint.org/) [![imports](https://img.shields.io/badge/%20imports-unused-red)](https://github.com/sweeetio/eslint-plugin-unused-imports) [![Vitest](https://img.shields.io/badge/Test-Vitest-brightgreen)](https://vitest.dev/)
 
 > **The fastest way to sell multiple tokens across EVM chains.**
 
-> 🚨 **Important**: The official project URL is [https://dustoff.fun](https://dustoff.fun). Do not trust other clones — they may be scams!
+> 🚨 **Important**: The original project URL is [https://dustoff.fun](https://dustoff.fun). This is a fork/clone of that project.
 
-**Dust** is a lightweight Next.js-based dApp designed to streamline multi-token sales across EVM-compatible chains. It supports up to six tokens in one transaction, filters burn-only assets, and routes transactions using ODOS and The Graph, with token data fetched via Blockscout APIs.
+**EVMSanitizer** is a lightweight Next.js-based dApp designed to streamline multi-token sales across EVM-compatible chains. It supports up to six tokens in one transaction, filters burn-only assets, and routes transactions using ODOS and The Graph, with token data fetched via Blockscout APIs.
 
 ## Table of contents
 
@@ -37,10 +37,33 @@ To run the project locally:
 
 ### 1. Clone and configure
 
+Create a `.env` file in the root directory with the following environment variables (all are optional with defaults where specified):
+
 ```bash
-cp .env.example .env
-# then edit `.env` to provide necessary values
+# Wallet Connect / AppKit Configuration
+NEXT_PUBLIC_PROJECT_ID=your_walletconnect_project_id
+
+# Supported Chains (comma-separated chain IDs, e.g., "1,8453,42161")
+NEXT_PUBLIC_SUPPORTED_CHAINS=1,8453,42161,10,137,534352,5000,59144,324,1101,250
+
+# Use mock data for development (true/false)
+NEXT_PUBLIC_USE_MOCKS=false
+
+# API Keys (optional - some features may have limited functionality without them)
+BLOCKSCOUT_API_KEY=your_blockscout_api_key
+NEXT_PUBLIC_THEGRAPH_API_KEY=your_thegraph_api_key
+
+# Partner/Partner Configuration (optional)
+NEXT_PUBLIC_PARTNER_CODE=0
+
+# Support/Feedback Link (optional)
+NEXT_PUBLIC_SUPPORT_LINK=https://t.me/+0j9GpMQpGsU5MWQy
+
+# Base URL (optional, defaults to http://localhost:3000)
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
+
+> 📝 **Note**: Most environment variables are optional. The app will work with defaults, but some features may have limited functionality without API keys.
 
 ### 2. Install dependencies
 
@@ -58,7 +81,7 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Testing
 
-Dust uses **Vitest** for testing core logic and components.
+EVMSanitizer uses **Vitest** for testing core logic and components.
 
 To run tests:
 
@@ -110,7 +133,7 @@ For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Feedback
 
-We would love to hear your thoughts, suggestions, and any issues you encounter while using **Dust**
+We would love to hear your thoughts, suggestions, and any issues you encounter while using **EVMSanitizer**
 
 > 📢 Send your feedback via our official Telegram support group: https://t.me/+0j9GpMQpGsU5MWQy
 
