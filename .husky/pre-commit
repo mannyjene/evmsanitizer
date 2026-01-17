@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
 echo "⏳ Running lint-staged config..."
-bunx lint-staged
+npx lint-staged
 echo "✅ Lint-staged config passed"
 echo "--------------------------------"
 
 echo "⏳ Running lint..."
-bun run lint
+npm run lint
 echo "✅ Lint passed"
 echo "--------------------------------"
 
