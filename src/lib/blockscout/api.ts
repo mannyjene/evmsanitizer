@@ -71,7 +71,6 @@ async function fetchFromEtherscan(
     // Note: Etherscan v1 API endpoints vary by chain (different base URLs)
     const etherscanBaseUrls: Record<number, string> = {
       1: "https://api.etherscan.io", // Ethereum
-      137: "https://api.polygonscan.com", // Polygon
       8453: "https://api.basescan.org", // Base
     };
 
@@ -179,10 +178,10 @@ export async function fetchTokens(address: string, network: SupportedChain): Pro
   try {
     let data: BlockscoutResponse;
     if (!appConfig.useMocks) {
-      // Use Etherscan API v2 for supported chains (Ethereum, Polygon, Base)
+      // Use Etherscan API v2 for supported chains (Ethereum, Base)
       if (!ETHERSCAN_SUPPORTED_CHAINS.includes(network.id)) {
         throw new Error(
-          `Chain ${network.id} (${network.name}) is not supported. Only Ethereum (1), Polygon (137), and Base (8453) are supported.`
+          `Chain ${network.id} (${network.name}) is not supported. Only Ethereum (1) and Base (8453) are supported.`
         );
       }
 
