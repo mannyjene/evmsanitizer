@@ -98,7 +98,7 @@ export const getTxnStatusCopies = (isError: boolean | null, props?: TxnStatusPro
           Your trade has been successfully executed
           {props?.hash && (
             <CustomLink href={`${props?.selectedNetwork?.explorerUrl}/tx/${props?.hash}`}>
-              Check details on Blockscout
+              Check details on explorer
             </CustomLink>
           )}
         </>
